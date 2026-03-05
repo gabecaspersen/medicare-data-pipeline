@@ -1,0 +1,15 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+  - role: worker
+  - role: worker
+networking:
+  # Optional: use the default CNI, fine for local experiments
+  # You can also add extraPortMappings if needed to expose services like Grafana locally
+  disableDefaultCNI: false
+  # example: map host port 3000 to Grafana service port 3000
+  # extraPortMappings:
+  #   - containerPort: 3000
+  #     hostPort: 3000
+  #     protocol: TCP
